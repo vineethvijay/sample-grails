@@ -4,12 +4,13 @@ This application is a grails example which can be deployed to anynines. The step
 
 h2. Tutorial
 
+
 h3. Package the application
+
 $ grails war
 
-| Compiling 120 source files
-
-| Done creating WAR target/helloworld-0.1.war
+Compiling 120 source files
+Done creating WAR target/helloworld-0.1.war
 
 h3. Deploy the application to anynines
 
