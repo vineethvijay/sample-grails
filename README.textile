@@ -1,0 +1,81 @@
+h1. Hello World Grails Application Example
+
+This application is a grails example which can be deployed to anynines. The steps below have to be taken to get it up and running on the server.
+
+h2. Tutorial
+
+h3. Package the application
+$ grails war
+
+| Compiling 120 source files
+
+| Done creating WAR target/helloworld-0.1.war
+
+h3. Deploy the application to anynines
+
+It is recommended to use at least 512 MB of Ram for java and tomcat applications. The cf command-line tool provides the --path argument for specifying war files used for the deployment.
+
+$ cf push --path target/helloworld-0.1.war
+Name> grails
+
+Instances> 1
+
+1: 64M
+2: 128M
+3: 256M
+4: 512M
+5: 1G
+6: 2G
+Memory Limit> 4
+
+Creating grails... OK
+
+1: grails
+2: none
+Subdomain> grails
+
+1: de.a9sapp.eu
+2: none
+Domain> de.a9sapp.eu
+
+Binding grails.de.a9sapp.eu to grails... OK
+
+Create services for application?> n
+
+Save configuration?> y
+
+Saving to manifest.yml... OK
+Uploading grails... OK
+Starting grails... OK
+-----> Downloaded app package (28M)
+Installing java.
+Downloading JDK...
+Copying openjdk-1.7.0_21.tar.gz from the buildpack cache ...
+Unpacking JDK to .jdk
+Downloading Tomcat: apache-tomcat-7.0.40.tar.gz
+Downloading apache-tomcat-7.0.40.tar.gz from http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.40/bin/ ...
+Unpacking Tomcat to .tomcat
+Copying mysql-connector-java-5.1.12.jar from the buildpack cache ...
+Copying postgresql-9.0-801.jdbc4.jar from the buildpack cache ...
+Copying auto-reconfiguration-0.6.6.jar from the buildpack cache ...
+-----> Uploading staged droplet (135M)
+-----> Uploaded droplet
+Checking grails...
+Staging in progress...
+Staging in progress...
+  0/1 instances: 1 starting
+  0/1 instances: 1 starting
+  0/1 instances: 1 starting
+  0/1 instances: 1 starting
+  0/1 instances: 1 starting
+  0/1 instances: 1 starting
+  1/1 instances: 1 running
+OK
+
+h3. Check the applications state
+
+$ cf apps
+Getting applications in myspace... OK
+
+name     status    usage      url
+grails   running   1 x 512M   grails.de.a9sapp.eu
