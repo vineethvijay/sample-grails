@@ -7,4 +7,4 @@ jobs:
     steps:
       - checkout
       - run : export GRAILS_OPTS="-XX:-UseSplitVerifier -Xverify:none"
-      - run: grails create-app myapp
+      - run: grails --version
