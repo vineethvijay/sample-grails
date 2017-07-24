@@ -9,4 +9,4 @@ jobs:
       - run : export GRAILS_OPTS="-XX:-UseSplitVerifier -Xverify:none"
       - run: grails --version
       - run: pwd
-      -run: grails create-app myApp
+      - run: grails create-app myApp
