@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/tmp
+    docker:
+      - image: mozart/grails
+    steps:
+      - checkout
+      - run: grails clean
+      - run: grails war
